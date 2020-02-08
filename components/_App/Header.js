@@ -1,6 +1,7 @@
 import { Menu, Container, Image, Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
+import { handleLogout } from "../../utils/auth";
 
 function Header({ user }) {
   const router = useRouter();
@@ -24,7 +25,7 @@ function Header({ user }) {
         </Link>
 
         <Link href="/about">
-          <Menu.Item header>
+          <Menu.Item header active={isActive('/about')}>
             <Icon
               name="globe"
               size="large"
@@ -33,25 +34,36 @@ function Header({ user }) {
           </Menu.Item>
         </Link>
 
-        <Link href="/signin">
-          <Menu.Item header>
+        { user ?  (<>
+          <Menu.Item onClick={handleLogout} header>
             <Icon
-              name="sign in"
+              name="sign out"
               size="large"
             />
-            Login
+            Logout
           </Menu.Item>
-        </Link>
+        </>) :
+        (<>
+          <Link href="/signin">
+            <Menu.Item header active={isActive('/signin')}>
+              <Icon
+                name="sign in"
+                size="large"
+              />
+              Login
+            </Menu.Item>
+          </Link>
 
-        <Link href="/signup">
-          <Menu.Item header>
-            <Icon
-              name="signup"
-              size="large"
-            />
-            Sign Up
-          </Menu.Item>
-        </Link>
+          <Link href="/signup">
+            <Menu.Item header active={isActive('/signup')}>
+              <Icon
+                name="signup"
+                size="large"
+              />
+              Sign Up
+            </Menu.Item>
+          </Link>
+        </>)}
       </Container>
     </Menu>
   )
