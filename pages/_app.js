@@ -28,7 +28,7 @@ class MyApp extends App {
       } catch(error) {
         console.error("Error getting user", error);
         destroyCookie(ctx, "token");
-        redirectUser(ctx, "/signin");
+        redirectUser(ctx, "/login");
       }
     }
 
@@ -41,7 +41,7 @@ class MyApp extends App {
 
   syncLogout = event => {
     if (event.key === "logout") {
-      Router.push("/signin");
+      Router.push("/login");
     }
   }
 

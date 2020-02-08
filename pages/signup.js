@@ -105,7 +105,7 @@ function Signup() {
     <Message attached="bottom" warning>
       <Icon name="help" />
       Existing user?{"  "}
-      <Link href="/signin">
+      <Link href="/login">
         <a>Log in here</a>
       </Link>{"  "}instead
     </Message>

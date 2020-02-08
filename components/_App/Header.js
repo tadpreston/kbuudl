@@ -44,8 +44,8 @@ function Header({ user }) {
           </Menu.Item>
         </>) :
         (<>
-          <Link href="/signin">
-            <Menu.Item header active={isActive('/signin')}>
+          <Link href="/login">
+            <Menu.Item header active={isActive('/login')}>
               <Icon
                 name="sign in"
                 size="large"
