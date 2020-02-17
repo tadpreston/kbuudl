@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const { ObjectId } = mongoose.Schema.Types;
 
 const AccountSchema = new mongoose.Schema({
-  owners: [
+  users: [
     {
       type: ObjectId,
       ref: "User"
@@ -11,7 +11,7 @@ const AccountSchema = new mongoose.Schema({
   ],
   company: {
     type: ObjectId,
-    ref: "Company"
+    ref: "Organization"
   }
 });
 

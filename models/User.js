@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const { String, Number } = mongoose.Schema.Types;
+const { ObjectId, String, Number } = mongoose.Schema.Types;
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -21,7 +21,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     default: "user",
-    enum: ["user", "admin", "root"]
+    enum: ["user", "admin", "root", "owner"]
+  },
+  organization: {
+    type: ObjectId,
+    ref: "Organization"
   }
 }, {
   timestamps: true

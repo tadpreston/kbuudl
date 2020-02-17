@@ -1,8 +1,8 @@
-import mongoose from "mongoose"l
+import mongoose from "mongoose";
 
-const { ObjectId, String } = mongoose.Schema.Types;
+const { String } = mongoose.Schema.Types;
 
-const CompanySchema = new mongoose.Schema({
+const OrganizationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -13,22 +13,25 @@ const CompanySchema = new mongoose.Schema({
     },
     street2: {
       type: String
-    }
+    },
     city: {
       type: String
-    }
+    },
     state: {
       type: String
-    }
+    },
     zipcode: {
       type: String
     }
-  }
+  },
   phone: {
     type: String,
-    required: true
-  }
+  },
   logoUrl: {
     type: String
   }
 });
+
+OrganizationSchema.index({ name: 1 });
+
+export default mongoose.models.Organization || mongoose.model("Organization", OrganizationSchema);

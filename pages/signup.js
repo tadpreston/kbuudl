@@ -7,6 +7,7 @@ import { handleLogin } from "../utils/auth";
 import axios from "axios";
 
 const INITIAL_USER = {
+  orgName: "",
   name: "",
   email: "",
   password: ""
@@ -65,6 +66,16 @@ function Signup() {
           fluid
           icon="user"
           iconPosition="left"
+          label="Organization Name"
+          placeholder="Organization Name"
+          name="orgName"
+          value={user.orgName}
+          onChange={handleChange}
+        />
+        <Form.Input
+          fluid
+          icon="user"
+          iconPosition="left"
           label="Name"
           placeholder="Name"
           name="name"
@@ -75,7 +86,7 @@ function Signup() {
           fluid
           icon="envelope"
           iconPosition="left"
-          lable="Email"
+          label="Email"
           placeholder="Email"
           name="email"
           type="email"
@@ -86,7 +97,7 @@ function Signup() {
           fluid
           icon="lock"
           iconPosition="left"
-          lable="Password"
+          label="Password"
           placeholder="Password"
           name="password"
           type="password"
