@@ -64,7 +64,7 @@ function Signup() {
       <Segment>
         <Form.Input
           fluid
-          icon="user"
+          icon="globe"
           iconPosition="left"
           label="Organization Name"
           placeholder="Organization Name"
