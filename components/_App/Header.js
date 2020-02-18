@@ -37,7 +37,7 @@ function Header({ user }) {
         { user ?  (<>
           <Dropdown item text={user.name}>
             <Dropdown.Menu>
-              <Link href="/user">
+              <Link href="/profile">
                 <Dropdown.Item header>
                   <Icon
                     name="user"
